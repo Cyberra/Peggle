@@ -82,9 +82,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Bumper.cpp" />
+    <ClCompile Include="Canon.cpp" />
+    <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Peggle.cpp" />
     <ClCompile Include="RessourceIDs.h" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\bart-dx-engine-e15\src\App\App.vcxproj">
@@ -95,7 +101,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Bumper.h" />
+    <ClInclude Include="Canon.h" />
+    <ClInclude Include="Collidable.h" />
     <ClInclude Include="Peggle.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

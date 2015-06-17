@@ -10,7 +10,7 @@ namespace Texture
 	{
 		Background,
 		MyBall,
-		BounceBall,
+		Bumper,
 		Basket,
 		Gun
 	};

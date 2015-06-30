@@ -17,3 +17,21 @@ Collidable::~Collidable()
 {
 
 }
+
+void Collidable::Start()
+{
+
+}
+
+void Collidable::Update()
+{
+	//if (isActive)
+	//{
+	//
+	//}
+}
+
+void Collidable::Stop()
+{
+
+}

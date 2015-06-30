@@ -10,4 +10,6 @@ public:
 	Background();
 	~Background();
 
+private:
+	D3DXVECTOR3 mCenter;
 };

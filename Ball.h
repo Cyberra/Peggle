@@ -6,5 +6,8 @@ class Ball :
 public:
 	Ball();
 	~Ball();
+
+private:
+	D3DXVECTOR3 mCenter;
 };
 

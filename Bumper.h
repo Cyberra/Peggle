@@ -8,5 +8,8 @@ class Bumper :
 public:
 	Bumper();
 	~Bumper();
+
+private:
+	D3DXVECTOR3 mCenter;
 };
 

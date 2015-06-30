@@ -19,9 +19,9 @@ Peggle::Peggle()
 	Textures->LoadTexture(Texture::ID::Canon, "Images/Gun.png");
 	
 	Background* bkg =	new Background();
-	Ball* myBall =		new Ball();
-	Bumper* bumper =	new Bumper();
-	Basket* basket =	new Basket();
+	//Ball* myBall =		new Ball();
+	//Bumper* bumper =	new Bumper();
+	//Basket* basket =	new Basket();
 	Canon* canon =		new Canon();
 }
 

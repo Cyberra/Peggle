@@ -8,5 +8,8 @@ class Basket :
 public:
 	Basket();
 	~Basket();
+
+private:
+	D3DXVECTOR3 mCenter;
 };
 

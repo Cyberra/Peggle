@@ -8,6 +8,7 @@ class Collidable :
 {
 public:
 	Collidable();
+	Collidable(Texture::ID id);
 	~Collidable();
 };
 

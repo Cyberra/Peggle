@@ -1,13 +1,12 @@
 #pragma once
 
 #include "Collidable.h"
-#include "Sprite.h"
 
-class Canon :
+class Basket :
 	public Collidable
 {
 public:
-	Canon();
-	~Canon();
+	Basket();
+	~Basket();
 };
 

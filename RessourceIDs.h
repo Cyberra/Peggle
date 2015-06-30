@@ -9,10 +9,10 @@ namespace Texture
 	enum ID
 	{
 		Background,
-		MyBall,
+		Ball,
 		Bumper,
 		Basket,
-		Gun
+		Canon
 	};
 }
 

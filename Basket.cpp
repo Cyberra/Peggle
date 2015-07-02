@@ -3,7 +3,7 @@
 
 
 Basket::Basket()
-	: Collidable(Texture::ID::Basket)
+	: Sprite(Texture::ID::Basket)
 	, mCenter(GetTextureInfos()->infos.Width / 2, GetTextureInfos()->infos.Height / 2, 0)
 	, MOVE_SPEED(100)
 	, mPos(0, -(gApp->GetParam().BackBufferHeight / 2), 0)

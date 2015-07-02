@@ -3,7 +3,7 @@
 
 
 Canon::Canon()
-	: Collidable(Texture::ID::Canon)
+	: Sprite(Texture::ID::Canon)
 	, mCenter(GetTextureInfos()->infos.Width / 2, GetTextureInfos()->infos.Height / 2, 0)
 	, shotRot(0)
 	, canonRot(D3DX_PI / 2)
@@ -32,7 +32,6 @@ void Canon::Update()
 
 void Canon::Shoot(float dt)
 {
-	std::cout << isShot << std::endl;
 	// Time between shots.
 	if (isShot == true && waitTime <= 0.5f)
 	{

@@ -12,7 +12,18 @@ namespace Texture
 		Ball,
 		Bumper,
 		Basket,
-		Canon
+		Canon,
+		ScoreBumper
+	};
+}
+
+namespace Components
+{
+	enum ID
+	{
+		UNDEFINED,
+		Ball,
+		Block,
 	};
 }
 

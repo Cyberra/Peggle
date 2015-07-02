@@ -3,7 +3,7 @@
 
 
 Ball::Ball()
-	: Collidable(Texture::ID::Ball)
+	: Sprite(Texture::ID::Ball)
 	, mCenter(GetTextureInfos()->infos.Width / 2, GetTextureInfos()->infos.Height / 2, 0)
 	, BALL_SPEED(250)
 	, mPos()
@@ -13,7 +13,7 @@ Ball::Ball()
 }
 
 Ball::Ball(D3DXVECTOR3 direction)
-	: Collidable(Texture::ID::Ball)
+	: Sprite(Texture::ID::Ball)
 	, mCenter(GetTextureInfos()->infos.Width / 2, GetTextureInfos()->infos.Height / 2, 0)
 	, BALL_SPEED(250)
 	, mPos(0, gApp->GetParam().BackBufferHeight / 2, 0)

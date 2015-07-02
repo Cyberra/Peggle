@@ -2,16 +2,13 @@
 
 #include "RessourceIDs.h"
 #include "Sprite.h"
-#include "CCircle.h"
 
-class Bumper :
+class ScoreBumpers :
 	public Sprite
 {
 public:
-	Bumper();
-	~Bumper();
-
-	CCircle* col;
+	ScoreBumpers();
+	~ScoreBumpers();
 
 private:
 	D3DXVECTOR3 mCenter;

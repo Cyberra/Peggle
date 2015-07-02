@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Collidable.h"
+#include "RessourceIDs.h"
 #include "Sprite.h"
 #include "Ball.h"
 
 class Canon :
-	public Collidable
+	public Sprite
 {
 public:
 	Canon();

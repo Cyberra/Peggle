@@ -87,11 +87,10 @@
     <ClCompile Include="Basket.cpp" />
     <ClCompile Include="Bumper.cpp" />
     <ClCompile Include="Canon.cpp" />
-    <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Peggle.cpp" />
     <ClCompile Include="RessourceIDs.h" />
-    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="ScoreBumpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
@@ -99,9 +98,8 @@
     <ClInclude Include="Basket.h" />
     <ClInclude Include="Bumper.h" />
     <ClInclude Include="Canon.h" />
-    <ClInclude Include="Collidable.h" />
     <ClInclude Include="Peggle.h" />
-    <ClInclude Include="Wall.h" />
+    <ClInclude Include="ScoreBumpers.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\bart-dx-engine-e15\src\App\App.vcxproj">

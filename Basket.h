@@ -1,9 +1,10 @@
 #pragma once
 
-#include "Collidable.h"
+#include "RessourceIDs.h"
+#include "Sprite.h"
 
 class Basket :
-	public Collidable
+	public Sprite
 {
 public:
 	Basket();

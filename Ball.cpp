@@ -9,7 +9,7 @@ Ball::Ball()
 	, mPos()
 	, mDir()
 {
-	SetPivot(&mCenter);
+	SetPivot(mCenter);
 }
 
 Ball::Ball(D3DXVECTOR3 direction)
@@ -19,7 +19,7 @@ Ball::Ball(D3DXVECTOR3 direction)
 	, mPos(0, gApp->GetParam().BackBufferHeight / 2, 0)
 	, mDir(direction.x, direction.y, 0)
 {
-	SetPivot(&mCenter);
+	SetPivot(mCenter);
 }
 
 Ball::~Ball()

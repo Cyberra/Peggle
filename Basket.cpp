@@ -11,10 +11,11 @@ Basket::Basket()
 	, goRight(1, 0, 0)
 	, movingRight(true)
 	, screenWidth(gApp->GetParam().BackBufferWidth / 2)
+	, posY(gApp->GetParam().BackBufferHeight / 2)
 {
-	SetPivot(&mCenter);
-	SetRotation(0, 0, D3DX_PI);
-	SetPosition(0, -(gApp->GetParam().BackBufferHeight / 2));
+	SetPivot(mCenter);
+	SetRotationRad(0, 0, D3DX_PI);
+	SetPosition(0, -posY + mCenter.y);
 }
 
 Basket::~Basket()
@@ -39,12 +40,12 @@ void Basket::Move(float dt)
 	if (mPos.x <= screenWidth - mCenter.x && movingRight == true)
 	{
 		mPos.x += 1 * MOVE_SPEED * dt;
-		SetPosition(mPos.x, -(gApp->GetParam().BackBufferHeight / 2));
+		SetPosition(mPos.x, -posY + mCenter.y);
 	}
 	else
 	{
 		mPos.x += -1 * MOVE_SPEED * dt;
-		SetPosition(mPos.x, -(gApp->GetParam().BackBufferHeight / 2));
+		SetPosition(mPos.x, -posY + mCenter.y);
 		movingRight = false;
 	}
 }

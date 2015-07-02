@@ -11,10 +11,6 @@ public:
 	Collidable(Texture::ID id);
 	~Collidable();
 
-	void Start();
-	void Update();
-	void Stop();
-
 private:
 	
 };

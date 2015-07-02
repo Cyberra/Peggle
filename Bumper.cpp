@@ -7,7 +7,7 @@ Bumper::Bumper()
 	, mCenter(GetTextureInfos()->infos.Width / 2, GetTextureInfos()->infos.Height / 2, 0)
 	, mPos(GetTextureInfos()->infos.Width / 2, GetTextureInfos()->infos.Height / 2, 0)
 {
-	SetPivot(&mCenter);
+	SetPivot(mCenter);
 	mBumper.push_back(this);
 }
 

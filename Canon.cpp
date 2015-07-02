@@ -12,17 +12,12 @@ Canon::Canon()
 	, waitTime(0.f)
 	, shotDirection(0.f, 0.f, 0.f)
 {
-	SetPivot(&mCenter);
-	SetRotation(0, 0, canonRot);
+	SetPivot(mCenter);
+	SetRotationRad(0.f, 0.f, canonRot);
 	SetPosition(0, gApp->GetParam().BackBufferHeight / 2);
 }
 
 Canon::~Canon()
-{
-
-}
-
-void Canon::Start()
 {
 
 }
@@ -37,8 +32,9 @@ void Canon::Update()
 
 void Canon::Shoot(float dt)
 {
+	std::cout << isShot << std::endl;
 	// Time between shots.
-	if (isShot == true && waitTime <= 0.2f)
+	if (isShot == true && waitTime <= 0.5f)
 	{
 		waitTime += dt;
 	}
@@ -48,7 +44,7 @@ void Canon::Shoot(float dt)
 		waitTime = 0;
 	}
 
-	if (gDInput->keyPressed(DIKEYBOARD_SPACE) && isShot == false)
+	if (gDInput->keyDown(DIKEYBOARD_SPACE) && isShot == false)
 	{
 		isShot = true;
 		shotDirection = { -sinf(shotRot), cosf(shotRot), 0.f };
@@ -66,18 +62,13 @@ void Canon::Rotate(float dt)
 	{
 		canonRot -= ROTATION_SPEED * dt * 180 / D3DX_PI;
 		shotRot -= ROTATION_SPEED * dt * 180 / D3DX_PI;
-		SetRotation(0, 0, canonRot);
+		SetRotationRad(0, 0, canonRot);
 	}
 
 	if (gDInput->keyDown(DIKEYBOARD_D) && canonRot * 180 / D3DX_PI <= ROT_MAX)
 	{
 		canonRot += ROTATION_SPEED * dt * 180 / D3DX_PI;
 		shotRot += ROTATION_SPEED * dt * 180 / D3DX_PI;
-		SetRotation(0, 0, canonRot);
+		SetRotationRad(0, 0, canonRot);
 	}
-}
-
-void Canon::Stop()
-{
-
 }

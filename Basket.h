@@ -18,6 +18,7 @@ private:
 	D3DXVECTOR3 goRight;
 	D3DXVECTOR3 goLeft;
 	bool movingRight;
+	int posY;
 	int screenWidth;
 	const float MOVE_SPEED;
 };

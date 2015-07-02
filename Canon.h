@@ -11,11 +11,9 @@ public:
 	Canon();
 	~Canon();
 
-	void Start();
 	void Update();
 	void Rotate(float dt);
 	void Shoot(float dt);
-	void Stop();
 
 private:
 	D3DXVECTOR3 mCenter;

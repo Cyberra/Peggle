@@ -11,7 +11,6 @@ Peggle::Peggle()
 	Textures->LoadTexture(Texture::ID::Canon, "Images/Gun.png");
 	
 	Background* bkg =	new Background();
-	//Ball* myBall =	new Ball();
 	//Bumper* bumper1 = new Bumper();
 	//bumper1->SetPosition(distanceBetweenBumpers, distanceBetweenBumpers * 2);
 	//Bumper* bumper2 = new Bumper();
@@ -49,7 +48,7 @@ Peggle::Peggle()
 	//bumper17->SetPosition(-distanceBetweenBumpers / 2 - distanceBetweenBumpers * 3, distanceBetweenBumpers);
 
 	Canon* canon =		new Canon();
-	//Basket* basket =	new Basket();
+	Basket* basket =	new Basket();
 }
 
 Peggle::~Peggle()

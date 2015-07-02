@@ -19,9 +19,11 @@ public:
 
 private:
 	D3DXVECTOR3 mCenter;
-	float mRotation;
+	D3DXVECTOR3 shotDirection;
+	float shotRot;
+	float canonRot;
 	const float ROTATION_SPEED; 
 	bool isShot;
-	float waitTime;;
+	float waitTime;
 };
 

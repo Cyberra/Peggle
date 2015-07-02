@@ -7,7 +7,7 @@ class Ball :
 {
 public:
 	Ball();
-	Ball(float direction);
+	Ball(D3DXVECTOR3 direction);
 	~Ball();
 
 	void Update();
@@ -17,7 +17,6 @@ private:
 	D3DXVECTOR3 mCenter;
 	D3DXVECTOR3 mPos;
 	D3DXVECTOR3 mDir;
-	float direction;
 	const float BALL_SPEED;
 	
 };

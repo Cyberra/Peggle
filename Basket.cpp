@@ -16,11 +16,14 @@ Basket::Basket()
 	SetPivot(mCenter);
 	SetRotationRad(0, 0, D3DX_PI);
 	SetPosition(0, -posY + mCenter.y);
+	this->SetID(Components::Basket);
+	collider = new CRectangle(this, -mCenter.x, -mCenter.y, mCenter.x * 2, mCenter.y);
 }
 
 Basket::~Basket()
 {
-
+	delete collider;
+	collider = nullptr;
 }
 
 void Basket::Update()
@@ -41,11 +44,13 @@ void Basket::Move(float dt)
 	{
 		mPos.x += 1 * MOVE_SPEED * dt;
 		SetPosition(mPos.x, -posY + mCenter.y);
+		collider->SetPosition(mPos.x, -posY + mCenter.y);
 	}
 	else
 	{
 		mPos.x += -1 * MOVE_SPEED * dt;
 		SetPosition(mPos.x, -posY + mCenter.y);
+		collider->SetPosition(mPos.x, -posY + mCenter.y);
 		movingRight = false;
 	}
 }

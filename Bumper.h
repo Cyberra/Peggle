@@ -1,19 +1,18 @@
 #pragma once
 
 #include "RessourceIDs.h"
-#include "Sprite.h"
+#include "AllBumpers.h"
 #include "CCircle.h"
 
 class Bumper :
-	public Sprite
+	public AllBumpers
 {
 public:
 	Bumper();
 	~Bumper();
 
 	void Shout();
-
-	CCircle* collider;
+	void PlaceCollider();
 
 private:
 	D3DXVECTOR3 mCenter;

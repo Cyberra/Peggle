@@ -11,6 +11,7 @@ Canon::Canon()
 	, isShot(false)
 	, waitTime(0.f)
 	, shotDirection(0.f, 0.f, 0.f)
+	, nbBalls(3)
 {
 	SetPivot(mCenter);
 	SetRotationRad(0.f, 0.f, canonRot);
@@ -43,12 +44,14 @@ void Canon::Shoot(float dt)
 		waitTime = 0;
 	}
 
-	if (gDInput->keyDown(DIKEYBOARD_SPACE) && isShot == false)
+	if (gDInput->keyDown(DIKEYBOARD_SPACE) && isShot == false && nbBalls > 0)
 	{
 		isShot = true;
 		shotDirection = { -sinf(shotRot), cosf(shotRot), 0.f };
-		Ball* ball = new Ball(-shotDirection);
+		ball = new Ball(-shotDirection);
+		myBalls.push_back(ball);
 		ball->SetPosition(0, gApp->GetParam().BackBufferHeight / 2);
+		nbBalls--;
 	}
 }
 

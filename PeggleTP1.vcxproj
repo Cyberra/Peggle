@@ -82,6 +82,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllBumpers.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Basket.cpp" />
@@ -93,6 +94,7 @@
     <ClCompile Include="ScoreBumpers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllBumpers.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Basket.h" />

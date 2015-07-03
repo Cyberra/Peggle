@@ -15,7 +15,9 @@ public:
 	void Rotate(float dt);
 	void Shoot(float dt);
 
+	int nbBalls;
 private:
+	std::vector<Ball*> myBalls;
 	D3DXVECTOR3 mCenter;
 	D3DXVECTOR3 shotDirection;
 	float shotRot;
@@ -23,5 +25,7 @@ private:
 	const float ROTATION_SPEED; 
 	bool isShot;
 	float waitTime;
+
+	Ball* ball;
 };
 

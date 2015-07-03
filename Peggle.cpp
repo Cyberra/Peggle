@@ -67,5 +67,6 @@ void Peggle::PlaceBumpers()
 		}
 
 		myBumpers[i]->SetPosition(bumperPos.x, bumperPos.y);
+		myBumpers[i]->collider->SetPosition(bumperPos.x, bumperPos.y);
 	}
 }

@@ -24,7 +24,8 @@ namespace Components
 		UNDEFINED,
 		Ball,
 		Bumper,
-		ScoreBumper
+		Basket,
+		ScoreBumper,
 	};
 }
 

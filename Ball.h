@@ -22,12 +22,14 @@ public:
 
 	void Update();
 	void Move(float dt);
+	void Collision(float dt);
 
 private:
 	D3DXVECTOR3 mCenter;
-	D3DXVECTOR3 mPos;
-	D3DXVECTOR3 mDir;
+	D3DXVECTOR2 mPos;
+	D3DXVECTOR2 mDir;
 	const float BALL_SPEED;
-	
+	int screenWidth;
+	int screenHeigth;
 };
 

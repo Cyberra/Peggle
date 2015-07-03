@@ -11,6 +11,7 @@
 #include "Canon.h"
 #include "Basket.h"
 #include "ScoreBumpers.h"
+#include "AllBumpers.h"
 
 class Peggle :
 	public Component
@@ -23,8 +24,9 @@ public:
 	void InitBumpers(int nbBumpers, int nbScoreBumpers);
 	void PlaceBumpers();
 
+
 private:
-	std::vector<Sprite*> myBumpers;
+	std::vector<AllBumpers*> myBumpers;
 	D3DXVECTOR3 bumperPos;
 
 	float bumperDistance;

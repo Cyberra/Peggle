@@ -2,6 +2,7 @@
 
 #include "RessourceIDs.h"
 #include "Sprite.h"
+#include "CRectangle.h"
 
 class Basket :
 	public Sprite
@@ -12,6 +13,8 @@ public:
 
 	void Update();
 	void Move(float dt);
+
+	CRectangle* collider;
 
 private:
 	D3DXVECTOR3 mCenter;

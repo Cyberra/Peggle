@@ -11,7 +11,9 @@ public:
 	Bumper();
 	~Bumper();
 
-	CCircle* col;
+	void Shout();
+
+	CCircle* collider;
 
 private:
 	D3DXVECTOR3 mCenter;

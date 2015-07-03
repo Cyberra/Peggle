@@ -20,6 +20,7 @@ Peggle::Peggle()
 	Basket* basket =	new Basket();
 
 	InitBumpers(nbBumpers, nbScoreBumpers);
+	PlaceBumpers();
 }
 
 Peggle::~Peggle()
@@ -34,51 +35,37 @@ void Peggle::Update()
 
 void Peggle::InitBumpers(int nbBumpers, int nbScoreBumpers)
 {
-	bumperPos.x -= screenWidth - bumperDistance;
-	bumperPos.y += bumperDistance * 2;
 	for (int i = 0; i < nbBumpers; ++i)
 	{
-		bumperPos.x += bumperDistance;
-
-		if (bumperPos.x >= screenWidth)
-		{
-			bumperPos.x -= screenWidth * 2;
-			bumperPos.y += bumperDistance;
-		}
-
-		if (i == 10)
-		{
-			bumperPos.x = -screenWidth + bumperDistance * 2;
-			bumperPos.y -= bumperDistance;
-		}
-
 		Bumper* bumper = new Bumper();
-		bumper->SetPosition(bumperPos.x, bumperPos.y);
 		myBumpers.push_back(bumper);
 	}
 
-	bumperPos.x = -screenWidth + bumperDistance;
-	bumperPos.y -= bumperDistance;
 	for (int i = 0; i < nbScoreBumpers; ++i)
+	{
+		ScoreBumpers* scoreBumper = new ScoreBumpers();
+		myBumpers.push_back(scoreBumper);
+	}
+
+
+	std::random_shuffle(myBumpers.begin(), myBumpers.end());
+}
+
+void Peggle::PlaceBumpers()
+{
+	bumperPos.y += bumperDistance * 2;
+
+	for (int i = 0; i < myBumpers.size(); ++i)
 	{
 		bumperPos.x += bumperDistance;
 
-		if (bumperPos.x >= screenWidth)
-		{
-			bumperPos.x -= screenWidth * 2;
-			bumperPos.y += bumperDistance;
-		}
-
-		if (i == 10)
+		// x %  y /
+		if (i % 9 == i / 9)
 		{
 			bumperPos.x = -screenWidth + bumperDistance * 2;
 			bumperPos.y -= bumperDistance;
 		}
 
-		ScoreBumpers* scoreBumper = new ScoreBumpers();
-		scoreBumper->SetPosition(bumperPos.x, bumperPos.y);
-		myBumpers.push_back(scoreBumper);
+		myBumpers[i]->SetPosition(bumperPos.x, bumperPos.y);
 	}
-
-	std::random_shuffle(myBumpers.begin(), myBumpers.end());
 }

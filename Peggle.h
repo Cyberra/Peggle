@@ -21,6 +21,7 @@ public:
 
 	void Update();
 	void InitBumpers(int nbBumpers, int nbScoreBumpers);
+	void PlaceBumpers();
 
 private:
 	std::vector<Sprite*> myBumpers;

@@ -23,7 +23,8 @@ namespace Components
 	{
 		UNDEFINED,
 		Ball,
-		Block,
+		Bumper,
+		ScoreBumper
 	};
 }
 

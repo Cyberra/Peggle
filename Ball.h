@@ -24,6 +24,8 @@ public:
 	void Move(float dt);
 	void Collision(float dt);
 
+	bool gainLife;
+
 private:
 	D3DXVECTOR3 mCenter;
 	D3DXVECTOR2 mPos;

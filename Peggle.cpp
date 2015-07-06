@@ -3,10 +3,14 @@
 
 Peggle::Peggle()
 	: screenWidth(gApp->GetParam().BackBufferWidth / 2)
+	, screenHeight(gApp->GetParam().BackBufferHeight / 2)
 	, bumperPos(0, 0, 0)
 	, bumperDistance(60)
 	, nbBumpers(20)
 	, nbScoreBumpers(20)
+	, gameLaunched(false)
+	, checkBalls(false)
+	, deadBalls(0)
 {
 	Textures->LoadTexture(Texture::ID::Background, "Images/Wallpaper3.jpg");
 	Textures->LoadTexture(Texture::ID::Ball, "Images/MyBall.png");
@@ -14,13 +18,13 @@ Peggle::Peggle()
 	Textures->LoadTexture(Texture::ID::Basket, "Images/Basket.png");
 	Textures->LoadTexture(Texture::ID::Canon, "Images/Gun.png");
 	Textures->LoadTexture(Texture::ID::ScoreBumper, "Images/ScoreBumper.png");
+	Textures->LoadTexture(Texture::ID::StartScreen, "Images/StartScreen.jpg");
+	Textures->LoadTexture(Texture::ID::number0, "Images/0.png");
+	Textures->LoadTexture(Texture::ID::number1, "Images/1.png");
+	Textures->LoadTexture(Texture::ID::number2, "Images/2.png");
+	Textures->LoadTexture(Texture::ID::number3, "Images/3.png");
 	
-	Background* bkg =	new Background();
-	Canon* canon =		new Canon();
-	Basket* basket =	new Basket();
-
-	InitBumpers(nbBumpers, nbScoreBumpers);
-	PlaceBumpers();
+	startScreen = new StartScreen();
 }
 
 Peggle::~Peggle()
@@ -30,7 +34,59 @@ Peggle::~Peggle()
 
 void Peggle::Update()
 {
-	
+	float dt = gTimer->GetDeltaTime();
+
+	if (gDInput->keyDown(DIKEYBOARD_RETURN) && gameLaunched == false)
+	{
+		InitGame();
+		gameLaunched = true;
+		checkBalls = true;
+	}
+
+	if (checkBalls)
+	{
+		CheckGameOver();
+	}
+}
+
+void Peggle::CheckGameOver()
+{
+	if (canon->nbBalls == 0)
+	{
+		for (int i = 0; i < canon->myBalls.size(); ++i)
+		{
+			if (canon->myBalls[i]->GetPosition().y <= -500.f)
+			{
+				deadBalls++;
+				if (deadBalls == canon->myBalls.size())
+				{
+					RestartGame();
+				}
+				else
+				{
+					deadBalls = 0;
+				}
+			}
+		}
+	}
+}
+
+void Peggle::RestartGame()
+{
+	std::cout << "RESTART" << std::endl;
+}
+
+void Peggle::InitGame()
+{
+	delete startScreen;
+	startScreen = nullptr;
+
+	bkg = new Background();
+	canon = new Canon();
+	basket = new Basket();
+
+	InitBumpers(nbBumpers, nbScoreBumpers);
+	PlaceBumpers();
 }
 
 void Peggle::InitBumpers(int nbBumpers, int nbScoreBumpers)

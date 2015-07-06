@@ -13,7 +13,12 @@ namespace Texture
 		Bumper,
 		Basket,
 		Canon,
-		ScoreBumper
+		ScoreBumper,
+		StartScreen,
+		number0,
+		number1,
+		number2,
+		number3
 	};
 }
 

@@ -10,12 +10,17 @@ Canon::Canon()
 	, ROTATION_SPEED(0.1)
 	, isShot(false)
 	, waitTime(0.f)
+	, isGainLife(false)
+	, waitGainLife(0.f)
 	, shotDirection(0.f, 0.f, 0.f)
 	, nbBalls(3)
 {
 	SetPivot(mCenter);
 	SetRotationRad(0.f, 0.f, canonRot);
 	SetPosition(0, gApp->GetParam().BackBufferHeight / 2);
+
+	hudLives = new HUDLives();
+	hudLives->UpdateLives(nbBalls);
 }
 
 Canon::~Canon()
@@ -29,6 +34,31 @@ void Canon::Update()
 
 	Rotate(dt);
 	Shoot(dt);
+	AddLife(dt);
+}
+
+void Canon::AddLife(float dt)
+{
+	if (isGainLife == true && waitGainLife <= 2.f)
+	{
+		waitGainLife += dt;
+	}
+	else
+	{
+		isGainLife = false;
+		waitGainLife = 0;
+	}
+
+	for (int i = 0; i < myBalls.size(); ++i)
+	{
+		if (myBalls[i]->gainLife == true && isGainLife == false)
+		{
+			isGainLife = true;
+			myBalls[i]->gainLife = false;
+			nbBalls++;
+			hudLives->UpdateLives(nbBalls);
+		}
+	}
 }
 
 void Canon::Shoot(float dt)
@@ -52,6 +82,7 @@ void Canon::Shoot(float dt)
 		myBalls.push_back(ball);
 		ball->SetPosition(0, gApp->GetParam().BackBufferHeight / 2);
 		nbBalls--;
+		hudLives->UpdateLives(nbBalls);
 	}
 }
 

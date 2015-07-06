@@ -9,6 +9,7 @@ Ball::Ball()
 	, mDir()
 	, screenWidth(gApp->GetParam().BackBufferWidth / 2)
 	, screenHeigth(gApp->GetParam().BackBufferHeight / 2)
+	, gainLife(false)
 {
 	SetPivot(mCenter);
 	SetRotationRad(0, 0, 0);
@@ -24,6 +25,7 @@ Ball::Ball(D3DXVECTOR3 direction)
 	, mDir(direction.x, direction.y)
 	, screenWidth(gApp->GetParam().BackBufferWidth / 2)
 	, screenHeigth(gApp->GetParam().BackBufferHeight / 2)
+	, gainLife(false)
 {
 	SetPivot(mCenter);
 	SetRotationRad(0, 0, 0);
@@ -82,10 +84,10 @@ void Ball::Collision(float dt)
 		// Basket
 		if (col->GetGameObject()->GetID() == Components::Basket)
 		{
-			
 			isVisible = false;
 			SetPosition(0, -1000);
 			SetRotationRad(0, 0, 0);
+			gainLife = true;
 		}
 
 		if (col->GetGameObject()->GetID() == Components::ScoreBumper)

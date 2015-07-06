@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\bart-dx-engine-e15\src\App;..\..\bart-dx-engine-e15\src\Core;..\..\bart-dx-engine-e15\dependencies\irrKlang-1.5.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;..\..\bart-dx-engine-e15\dependencies\irrKlang-1.5.0\lib\Win32-visualStudio;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\bart-dx-engine-e15\src\App;..\bart-dx-engine-e15\src\Core;..\bart-dx-engine-e15\dependencies\irrKlang-1.5.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;..\bart-dx-engine-e15\dependencies\irrKlang-1.5.0\lib\Win32-visualStudio;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -88,10 +88,12 @@
     <ClCompile Include="Basket.cpp" />
     <ClCompile Include="Bumper.cpp" />
     <ClCompile Include="Canon.cpp" />
+    <ClCompile Include="HUDLives.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Peggle.cpp" />
     <ClCompile Include="RessourceIDs.h" />
     <ClCompile Include="ScoreBumpers.cpp" />
+    <ClCompile Include="StartScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllBumpers.h" />
@@ -100,14 +102,16 @@
     <ClInclude Include="Basket.h" />
     <ClInclude Include="Bumper.h" />
     <ClInclude Include="Canon.h" />
+    <ClInclude Include="HUDLives.h" />
     <ClInclude Include="Peggle.h" />
     <ClInclude Include="ScoreBumpers.h" />
+    <ClInclude Include="StartScreen.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\bart-dx-engine-e15\src\App\App.vcxproj">
+    <ProjectReference Include="..\bart-dx-engine-e15\src\App\App.vcxproj">
       <Project>{c5b44902-a125-46ca-b7f1-cd8d6a17394c}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\bart-dx-engine-e15\src\Core\Core.vcxproj">
+    <ProjectReference Include="..\bart-dx-engine-e15\src\Core\Core.vcxproj">
       <Project>{cacb57eb-0de4-4e3f-b855-1cebd28a0c4f}</Project>
     </ProjectReference>
   </ItemGroup>
